@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.hortonworks</groupId>
-	<artifactId>cloudbreak-service-demo</artifactId>
+	<artifactId>whoville-ui</artifactId>
 	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
-	<name>cloudbreak-service-demo</name>
+	<name>whoville-ui</name>
 	<description></description>
 
 	<parent>

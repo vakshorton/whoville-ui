@@ -1,4 +1,4 @@
-package com.hortonworks.demostore.controller;
+package com.hortonworks.whoville.controller;
 
 import javax.servlet.http.HttpSession;
 

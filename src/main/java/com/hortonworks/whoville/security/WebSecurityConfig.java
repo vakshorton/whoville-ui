@@ -1,4 +1,4 @@
-package com.hortonworks.demostore.security;
+package com.hortonworks.whoville.security;
 
 
 	

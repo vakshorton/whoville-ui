@@ -858,6 +858,8 @@ function paintCluster(clusterId, clusterName, clusterType, clusterStatus, platfo
 	'			            <h4 class="modal-title">'+clusterName+'</h4>' +
 	'			          </div>' +
 	'			          <div class="modal-body">';
+		var sharedServiceClusterName = document.getElementById('shared_services_cluster_name').value
+		var dpsClusterName = document.getElementById('dps_cluster_name').value
 		count = 0;
 		for (var service in gateway) {
 			if(gateway[service] != null){
@@ -868,7 +870,7 @@ function paintCluster(clusterId, clusterName, clusterType, clusterStatus, platfo
 			}
 		}
 		if(count == 0){
-			if(clusterName.includes('-dps')){
+			if(clusterName == dpsClusterName){
 				clusterHTML = clusterHTML +
 				'	<li class="ng-scope"><a href="https://'+ambariServerIp+'" class="" role="button" target="_blank">' +
 				'	<i class="fa fa-fw fa-external-link" aria-hidden="true"></i>DataPlane Service</a></li>';
@@ -876,6 +878,12 @@ function paintCluster(clusterId, clusterName, clusterType, clusterStatus, platfo
 				clusterHTML = clusterHTML +
 				'	<li class="ng-scope"><a href="https://'+ambariServerIp+'/ambari" class="" role="button" target="_blank">' +
 				'	<i class="fa fa-fw fa-external-link" aria-hidden="true"></i>Ambari</a></li>';
+			}
+		}else{
+			if(clusterName != sharedServiceClusterName && clusterName != dpsClusterName){
+				clusterHTML = clusterHTML + 
+				'	<li class="ng-scope"><a href="https://'+ambariServerIp+':30800" class="" role="button" target="_blank">' +
+    				'	<i class="fa fa-fw fa-external-link" aria-hidden="true"></i>Data Analytics Studio</a></li>';
 			}
 		}
 	clusterHTML = clusterHTML +

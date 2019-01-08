@@ -253,6 +253,14 @@ public class Controller{
 		return currentTask;
 	}
 	
+	private String getAmbariClusterService(String ambariIp, String clusterName, String serviceName){
+		String urlString = "http://"+ambariIp+":8080/api/v1/clusters/"+clusterName+"/services/"+serviceName;
+		String basicAuth = "Basic " + new String(Base64.encodeBase64((dpsAdminUserName + ":" + dpsAdminPassword).getBytes()));
+				
+		JSONObject service = httpGetObject(urlString, basicAuth, true);
+		return null;
+	}
+	
     @RequestMapping(value="/search", produces = { MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<String>> search(@RequestParam(value="term") String text) {
     	
